@@ -20,7 +20,7 @@ jobs:
     name: buildx
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: badouralix/${{ github.event.inputs.image_name }}  # Not exactly the correct wording as per https://stackoverflow.com/questions/31115098/what-is-the-difference-between-an-image-and-a-repository
+      IMAGE_NAME: ghcr.io/vdoster/${{ github.event.inputs.image_name }}  # Not exactly the correct wording as per https://stackoverflow.com/questions/31115098/what-is-the-difference-between-an-image-and-a-repository
       IMAGE_TAG: ${{ github.event.inputs.image_tag }}
       WORKING_DIRECTORY: ${{ github.event.inputs.image_name }}/${{ github.event.inputs.image_tag }}
     steps:
