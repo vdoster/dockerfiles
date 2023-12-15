@@ -66,6 +66,14 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}  # Get access token from https://hub.docker.com/settings/security
 
+    - name: Login to ghcr.io
+      if: github.event_name != 'pull_request'
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.github-token }}
+
     # Hack from https://stackoverflow.com/questions/58913512/how-to-give-github-action-the-content-of-a-file-as-input
     - name: Read platforms
       id: read_platforms
