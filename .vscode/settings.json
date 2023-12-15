@@ -1,9 +1,0 @@
-{
-    "markdownlint.config": {
-        "MD045": false,
-    },
-    "[dockerfile]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 4
-    },
-}

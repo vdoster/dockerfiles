@@ -72,7 +72,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.github-token }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     # Hack from https://stackoverflow.com/questions/58913512/how-to-give-github-action-the-content-of-a-file-as-input
     - name: Read platforms
