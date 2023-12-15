@@ -18,6 +18,7 @@
 #
 
 set -e
+git config --global --add safe.directory /
 
 # Prepend "zunit" if the first argument is a file / directory in the current workdir or is not an executable
 if [ -e "$(echo $1 | sed -r 's|^(/)?|./|')" ] || ! type -- "$1" &> /dev/null; then
