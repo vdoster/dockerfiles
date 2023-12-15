@@ -1,14 +1,14 @@
 FROM alpine:latest
 
 # Set non-built-time labels
-LABEL org.opencontainers.image.authors="Ayaz BADOURALY"
+LABEL org.opencontainers.image.authors="zdharma-continuum"
 LABEL org.opencontainers.image.description="Docker image for ZUnit, a powerful unit testing framework for ZSH"
 
 # Set default WORKDIR to /app
 WORKDIR /app
 
 # Install zsh and utils
-RUN apk add --no-cache ncurses zsh
+RUN apk add --no-cache curl git jq ncurses tar zsh
 
 # Install zunit and dependencies
 RUN apk add --no-cache --virtual build-dependencies \
@@ -19,7 +19,7 @@ RUN apk add --no-cache --virtual build-dependencies \
     git clone --depth=1 https://github.com/molovo/revolver /tmp/revolver && \
         cp /tmp/revolver/revolver /usr/local/bin/revolver && \
         chmod +x /usr/local/bin/revolver && \
-    git clone --depth=1 https://github.com/molovo/zunit /tmp/zunit && \
+    git clone --branch='feat/format' --depth=1 https://github.com/zdharma-continuum/zunit /tmp/zunit && \
         cd /tmp/zunit && ./build.zsh && \
         cp /tmp/zunit/zunit /usr/local/bin/zunit && \
         chmod +x /usr/local/bin/zunit && \
