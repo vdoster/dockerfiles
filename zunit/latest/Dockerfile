@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential bzip2 \
     ca-certificates cmake coreutils curl \
     file \
-    g++ gawk git go \
+    g++ gawk git golang \
     jq \
     less libz-dev locales libncurses5-dev libncursesw5-dev \
     make \
@@ -38,8 +38,8 @@ RUN git config \
   https://github.com/zdharma-continuum/zunit /tmp/zunit \
  && cd /tmp/zunit \
  && ./build.zsh \
- && cp /tmp/zunit/zunit /usr/local/bin/zunit \
- && chmod +x /usr/local/bin/zunit \
+ && cp /tmp/zunit/zunit /bin/zunit \
+ && chmod +x /bin/zunit \
  && rm -rf /tmp/zunit
 
 # Set default ENTRYPOINT and CMD
