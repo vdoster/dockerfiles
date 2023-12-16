@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential bzip2 \
     ca-certificates cmake coreutils curl \
     file \
-    g++ gawk git \
+    g++ gawk git go \
     jq \
     less libz-dev locales libncurses5-dev libncursesw5-dev \
     make \
